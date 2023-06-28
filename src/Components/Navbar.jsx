@@ -1,9 +1,16 @@
+import { useState } from "react";
+
 function Navbar() {
     const Button = () => {
+        const [count, setCount] = useState(null);
         return (        
-            <>
-                <button className="headerButton">Sign In</button>
-                <button className="headerButton">Sign Up</button>
+            <>  <p>You clicked {count} times</p>
+                <button className="headerButton" onClick={() => {
+                   setCount(count + 1);
+                }}>Sign In</button>
+                <button className="headerButton" onClick={() => {
+                    setCount(count - 1);
+                }}>Sign Up</button>
             </>
         )};
 
